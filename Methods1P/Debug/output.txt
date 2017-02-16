@@ -1,0 +1,21 @@
+Start
+Filled container:
+Container contains 15 elements.
+1: It is a Tree: its name is Gnav-ov-Stryk, its age is estimated to be 2000000000000000 years.
+2: It is a Bush: its name is Nyee, its blooming month is January.
+3: It is a Bush: its name is Hoozoo, its blooming month is February.
+4: It is a Bush: its name is Shoom, its blooming month is March.
+5: It is a Bush: its name is BushNumba4, its blooming month is April.
+6: It is a Bush: its name is Poomoo, its blooming month is May.
+7: It is a Bush: its name is OOOOO))), its blooming month is June.
+8: It is a Bush: its name is Vasily, its blooming month is July.
+9: It is a Bush: its name is Sookomoo, its blooming month is August.
+10: It is a Bush: its name is Myeoo, its blooming month is September.
+11: It is a Bush: its name is Toomoo, its blooming month is October.
+12: It is a Bush: its name is Mootoo, its blooming month is November.
+13: It is a Bush: its name is Toomoonyee, its blooming month is December.
+14: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
+15: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
+Empty container:
+Container contains 0 elements.
+Stop

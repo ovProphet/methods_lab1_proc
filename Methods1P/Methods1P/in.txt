@@ -1,0 +1,10 @@
+1
+Vasya 5
+2
+Olya 3
+1
+Jeka 21
+2
+Denis 2
+2
+Valera 11

@@ -1,0 +1,9 @@
+Filled container:
+Container contains 5 elements.
+1: It is a Tree: its name is Vasya, its age is estimated to be 5 years.
+2: It is a Bush: its name is Olya, its blooming month is April.
+3: It is a Tree: its name is Jeka, its age is estimated to be 21 years.
+4: It is a Bush: its name is Denis, its blooming month is March.
+5: It is a Bush: its name is Valera, its blooming month is December.
+Empty container:
+Container contains 0 elements.
