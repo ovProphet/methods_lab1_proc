@@ -112,11 +112,32 @@ void In(bush* &b, ifstream &ifst)
 		break;
 	}
 }
+void In(flower* &f, ifstream &ifst)
+{
+	int x;
+	ifst >> f->name >> x;
+	switch(x)
+	{
+	case 0:
+		f->type = flower::DOMESTIC;
+		break;
+	case 1:
+		f->type = flower::GARDEN;
+		break;
+	case 2:
+		f->type = flower::WILD;
+		break;
+	case 3:
+		f->type = flower::BED;
+		break;
+	}
+}
 plant* In(ifstream &ifst)
 {
 	plant *pl;
 	tree* t;
 	bush* b;
+	flower* f;
 	int k;
 	ifst >> k;
 	switch(k)
@@ -131,6 +152,11 @@ plant* In(ifstream &ifst)
 		b->k = BUSH;
 		In(b,ifst);
 		return (plant*)b;
+	case 3:
+		f = new flower;
+		f->k = FLOWER;
+		In(f,ifst);
+		return (plant*)f;
 	default:
 		return 0;
 	}
@@ -182,10 +208,30 @@ void Out(tree* &t, ofstream &ofst)
 {
 	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
 }
+void Out(flower* &f, ofstream &ofst)
+{
+	ofst << "It is a Flower: its name is " << f->name << ". ";
+	switch(f->type)
+	{
+	case flower::GARDEN:
+		ofst << "It's a garden flower." << endl;
+		break;
+	case flower::DOMESTIC:
+		ofst << "It's a domestic flower." << endl;
+		break;
+	case flower::WILD:
+		ofst << "It's a wild flower." << endl;
+		break;
+	case flower::BED:
+		ofst << "It's from a flower-bed." << endl;
+		break;
+	}
+}
 void Out(plant* &p, ofstream &ofst)
 {
 	tree* t;
 	bush* b;
+	flower* f;
 	switch(p->k)
 	{
 	case TREE:
@@ -195,6 +241,10 @@ void Out(plant* &p, ofstream &ofst)
 	case BUSH:
 		b = (bush*)p;
 		Out(b,ofst);
+		break;
+	case FLOWER:
+		f = (flower*)p;
+		Out(f,ofst);
 		break;
 	default:
 		ofst << "Incorrect plant!" << endl;

@@ -1,9 +1,26 @@
+Start
 Filled container:
-Container contains 5 elements.
-1: It is a Tree: its name is Vasya, its age is estimated to be 5 years.
-2: It is a Bush: its name is Olya, its blooming month is April.
-3: It is a Tree: its name is Jeka, its age is estimated to be 21 years.
-4: It is a Bush: its name is Denis, its blooming month is March.
-5: It is a Bush: its name is Valera, its blooming month is December.
+Container contains 20 elements.
+1: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
+2: It is a Bush: its name is Nyeea, its blooming month is January.
+3: It is a Bush: its name is Hoozooa, its blooming month is February.
+4: It is a Bush: its name is Shoom, its blooming month is March.
+5: It is a Bush: its name is BushNumba4, its blooming month is April.
+6: It is a Bush: its name is Poomoo, its blooming month is May.
+7: It is a Bush: its name is OOOOO))), its blooming month is June.
+8: It is a Bush: its name is Vasily, its blooming month is July.
+9: It is a Bush: its name is Sookomoo, its blooming month is August.
+10: It is a Bush: its name is Myeoo, its blooming month is September.
+11: It is a Bush: its name is Toomoo, its blooming month is October.
+12: It is a Bush: its name is Mootoo, its blooming month is November.
+13: It is a Bush: its name is Toomoonyee, its blooming month is December.
+14: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
+15: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
+16: It is a Flower: its name is Flower1. It's a domestic flower.
+17: It is a Flower: its name is Flower2. It's a garden flower.
+18: It is a Flower: its name is Flower3. It's a wild flower.
+19: It is a Flower: its name is Flower4. It's from a flower-bed.
+20: It is a Flower: its name is Flower5. It's a garden flower.
 Empty container:
 Container contains 0 elements.
+Stop
