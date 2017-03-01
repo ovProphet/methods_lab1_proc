@@ -4,21 +4,26 @@
 
 using namespace std;
 enum key{TREE,BUSH};
+enum hab{FOREST,FIELD,DESERT,TUNDRA,JUNGLE};
+
 struct plant
 {
 	key k;
 	string name;
+	hab habitat;
 };
 struct tree
 {
 	key k;
 	string name;
+	hab habitat;
 	long long age;
 };
 struct bush
 {
 	key k;
 	string name;
+	hab habitat;
 	enum month {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
 	month blooming;
 };
@@ -39,3 +44,4 @@ plant* In(ifstream &ifst);
 void Out(bush* &b, ofstream &ofst);
 void Out(tree* &t, ofstream &ofst);
 void Out(plant* &p, ofstream &ofst);
+void Sort(container* &c);
