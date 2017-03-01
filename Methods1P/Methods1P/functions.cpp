@@ -177,10 +177,14 @@ void Out(bush* &b, ofstream &ofst)
 		ofst << "December." << endl;
 		break;
 	}
+	plant *p = (plant*)b;
+	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
 }
 void Out(tree* &t, ofstream &ofst)
 {
 	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
+	plant *p = (plant*)t;
+	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
 }
 void Out(plant* &p, ofstream &ofst)
 {
@@ -199,4 +203,17 @@ void Out(plant* &p, ofstream &ofst)
 	default:
 		ofst << "Incorrect plant!" << endl;
 	}
+}
+int consonant(plant* &p, ofstream &ofst)
+{
+	int res = 0;
+	string cur = p->name;
+	string alphabet = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz";
+	for(int i = 0; i < alphabet.length(); ++i)
+	{
+		int c = count(cur.begin(),cur.end(), alphabet[i]);
+		if (c > 0)
+			res += c;
+	}
+	return res;
 }

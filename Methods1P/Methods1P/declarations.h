@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 enum key{TREE,BUSH};
@@ -39,3 +40,4 @@ plant* In(ifstream &ifst);
 void Out(bush* &b, ofstream &ofst);
 void Out(tree* &t, ofstream &ofst);
 void Out(plant* &p, ofstream &ofst);
+int consonant(plant* &p, ofstream &ofst);
