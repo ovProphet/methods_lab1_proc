@@ -44,3 +44,4 @@ plant* In(ifstream &ifst);
 void Out(bush* &b, ofstream &ofst);
 void Out(tree* &t, ofstream &ofst);
 void Out(plant* &p, ofstream &ofst);
+void Sort(container* &c);

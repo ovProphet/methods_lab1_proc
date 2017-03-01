@@ -276,3 +276,28 @@ void Out(plant* &p, ofstream &ofst)
 		ofst << "Incorrect plant!" << endl;
 	}
 }
+void Sort(container* &c)
+{
+	container* start = c;
+	for(int i = 0; i < start->len; ++i)
+	{
+		bool changed = false;
+		container* cur = start;
+		while(cur->next->pl != NULL)
+		{
+			int i1 = cur->pl->habitat;
+			int i2 = cur->next->pl->habitat;
+			if(i1 > i2)
+			{
+				plant* buf;
+				buf = cur->pl;
+				cur->pl = cur->next->pl;
+				cur->next->pl = buf;
+				changed = true;
+			}
+			cur=cur->next;
+		}
+		if(!changed)
+			break;
+	}
+}
