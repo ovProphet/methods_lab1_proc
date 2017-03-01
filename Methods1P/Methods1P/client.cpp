@@ -22,6 +22,9 @@ int main(int argc, char* argv[])
 	ofst << "Filled container:" << endl;
 	Out(c,ofst);
 
+	ofst << "Elements of the first type only:" << endl;
+	OutFirstOnly(c,ofst);
+
 	Clear(c);
 	ofst << "Empty container:" << endl;
 	Out(c,ofst);

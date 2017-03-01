@@ -200,3 +200,17 @@ void Out(plant* &p, ofstream &ofst)
 		ofst << "Incorrect plant!" << endl;
 	}
 }
+void OutFirstOnly(container* &c, ofstream &ofst)
+{
+	container* cur = c;
+	int counter = 0;
+	while(cur->pl != NULL)
+	{
+		plant* p = cur->pl;
+		cur = cur->next;
+		if(p->k != 0)
+			continue;
+		ofst << ++counter << ": ";
+		Out(p, ofst);
+	}
+}
