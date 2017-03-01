@@ -28,13 +28,3 @@ Toomoonyee 11
 Kyr-Lun-Borgor 55555
 1
 Za-Bor 1337
-3
-Flower1 0
-3
-Flower2 1
-3
-Flower3 2
-3
-Flower4 3
-3
-Flower5 1
