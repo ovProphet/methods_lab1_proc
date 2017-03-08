@@ -276,7 +276,6 @@ void Out(plant* &p, ofstream &ofst)
 		ofst << "Incorrect plant!" << endl;
 	}
 }
-<<<<<<< HEAD
 void OutFirstOnly(container* &c, ofstream &ofst)
 {
 	container* cur = c;
