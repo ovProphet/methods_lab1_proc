@@ -171,6 +171,25 @@ void In(flower* &f, ifstream &ifst)
 		f->type = flower::BED;
 		break;
 	}
+	ifst >> x;
+	switch(x)
+	{
+	case 0:
+		f->habitat = FOREST;
+		break;
+	case 1:
+		f->habitat = FIELD;
+		break;
+	case 2:
+		f->habitat = DESERT;
+		break;
+	case 3:
+		f->habitat = TUNDRA;
+		break;
+	case 4:
+		f->habitat = JUNGLE;
+		break;
+	}
 }
 plant* In(ifstream &ifst)
 {
@@ -310,6 +329,8 @@ void Out(flower* &f, ofstream &ofst)
 		ofst << "It's from a flower-bed." << endl;
 		break;
 	}
+	plant *p = (plant*)f;
+	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
 }
 void Out(plant* &p, ofstream &ofst)
 {

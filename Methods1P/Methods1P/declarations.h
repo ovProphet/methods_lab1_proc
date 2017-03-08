@@ -31,8 +31,9 @@ struct flower
 {
 	key k;
 	string name;
-	enum habitat{DOMESTIC, WILD, GARDEN, BED};
-	habitat type;
+	hab habitat;
+	enum habitat1{DOMESTIC, WILD, GARDEN, BED};
+	habitat1 type;
 };
 struct container
 {
