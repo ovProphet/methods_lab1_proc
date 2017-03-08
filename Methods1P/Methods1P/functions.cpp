@@ -217,6 +217,7 @@ void Out(bush* &b, ofstream &ofst)
 		ofst << "December." << endl;
 		break;
 	}
+<<<<<<< HEAD
 	switch(b->habitat)
 	{
 	case DESERT:
@@ -235,10 +236,15 @@ void Out(bush* &b, ofstream &ofst)
 		ofst << "Its natural habitat is field." << endl;
 		break;
 	}
+=======
+	plant *p = (plant*)b;
+	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
+>>>>>>> SecondBranch
 }
 void Out(tree* &t, ofstream &ofst)
 {
 	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
+<<<<<<< HEAD
 	switch(t->habitat)
 	{
 	case DESERT:
@@ -257,6 +263,10 @@ void Out(tree* &t, ofstream &ofst)
 		ofst << "Its natural habitat is field." << endl;
 		break;
 	}
+=======
+	plant *p = (plant*)t;
+	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
+>>>>>>> SecondBranch
 }
 void Out(plant* &p, ofstream &ofst)
 {
@@ -314,4 +324,17 @@ void Sort(container* &c)
 		if(!changed)
 			break;
 	}
+}
+int consonant(plant* &p, ofstream &ofst)
+{
+	int res = 0;
+	string cur = p->name;
+	string alphabet = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz";
+	for(int i = 0; i < alphabet.length(); ++i)
+	{
+		int c = count(cur.begin(),cur.end(), alphabet[i]);
+		if (c > 0)
+			res += c;
+	}
+	return res;
 }
