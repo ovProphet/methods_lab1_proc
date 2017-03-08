@@ -67,6 +67,26 @@ void Out(container* &c, ofstream &ofst)
 void In(tree* &t, ifstream &ifst)
 {
 	ifst >> t->name >> t->age;
+	int x;
+	ifst >> x;
+	switch(x)
+	{
+	case 0:
+		t->habitat = FOREST;
+		break;
+	case 1:
+		t->habitat = FIELD;
+		break;
+	case 2:
+		t->habitat = DESERT;
+		break;
+	case 3:
+		t->habitat = TUNDRA;
+		break;
+	case 4:
+		t->habitat = JUNGLE;
+		break;
+	}
 }
 void In(bush* &b, ifstream &ifst)
 {
@@ -109,6 +129,26 @@ void In(bush* &b, ifstream &ifst)
 		break;
 	case 11:
 		b->blooming = bush::DEC;
+		break;
+	}
+	int x;
+	ifst >> x;
+	switch(x)
+	{
+	case 0:
+		b->habitat = FOREST;
+		break;
+	case 1:
+		b->habitat = FIELD;
+		break;
+	case 2:
+		b->habitat = DESERT;
+		break;
+	case 3:
+		b->habitat = TUNDRA;
+		break;
+	case 4:
+		b->habitat = JUNGLE;
 		break;
 	}
 }
@@ -177,10 +217,46 @@ void Out(bush* &b, ofstream &ofst)
 		ofst << "December." << endl;
 		break;
 	}
+	switch(b->habitat)
+	{
+	case DESERT:
+		ofst << "Its natural habitat is desert." << endl;
+		break;
+	case TUNDRA:
+		ofst << "Its natural habitat is tundra." << endl;
+		break;
+	case FOREST:
+		ofst << "Its natural habitat is forest." << endl;
+		break;
+	case JUNGLE:
+		ofst << "Its natural habitat is jungle." << endl;
+		break;
+	case FIELD:
+		ofst << "Its natural habitat is field." << endl;
+		break;
+	}
 }
 void Out(tree* &t, ofstream &ofst)
 {
 	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
+	switch(t->habitat)
+	{
+	case DESERT:
+		ofst << "Its natural habitat is desert." << endl;
+		break;
+	case TUNDRA:
+		ofst << "Its natural habitat is tundra." << endl;
+		break;
+	case FOREST:
+		ofst << "Its natural habitat is forest." << endl;
+		break;
+	case JUNGLE:
+		ofst << "Its natural habitat is jungle." << endl;
+		break;
+	case FIELD:
+		ofst << "Its natural habitat is field." << endl;
+		break;
+	}
 }
 void Out(plant* &p, ofstream &ofst)
 {
@@ -200,6 +276,7 @@ void Out(plant* &p, ofstream &ofst)
 		ofst << "Incorrect plant!" << endl;
 	}
 }
+<<<<<<< HEAD
 void OutFirstOnly(container* &c, ofstream &ofst)
 {
 	container* cur = c;
@@ -212,5 +289,30 @@ void OutFirstOnly(container* &c, ofstream &ofst)
 			continue;
 		ofst << ++counter << ": ";
 		Out(p, ofst);
+	}
+}
+void Sort(container* &c)
+{
+	container* start = c;
+	for(int i = 0; i < start->len; ++i)
+	{
+		bool changed = false;
+		container* cur = start;
+		while(cur->next->pl != NULL)
+		{
+			int i1 = cur->pl->habitat;
+			int i2 = cur->next->pl->habitat;
+			if(i1 > i2)
+			{
+				plant* buf;
+				buf = cur->pl;
+				cur->pl = cur->next->pl;
+				cur->next->pl = buf;
+				changed = true;
+			}
+			cur=cur->next;
+		}
+		if(!changed)
+			break;
 	}
 }

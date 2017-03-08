@@ -21,6 +21,10 @@ int main(int argc, char* argv[])
 	In(c, ifst);
 	ofst << "Filled container:" << endl;
 	Out(c,ofst);
+	
+	Sort(c);
+	ofst << "Sorted container:" << endl;
+	Out(c,ofst);
 
 	ofst << "Elements of the first type only:" << endl;
 	OutFirstOnly(c,ofst);
