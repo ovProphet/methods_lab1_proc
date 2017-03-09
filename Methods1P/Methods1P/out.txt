@@ -47,12 +47,16 @@ Its name has 8 consonants.
 Its natural habitat is jungle.
 Its name has 3 consonants.
 16: It is a Flower: its name is tewte. It's a wild flower.
+Its natural habitat is forest.
 Its name has 3 consonants.
 17: It is a Flower: its name is Flower1. It's a domestic flower.
+Its natural habitat is field.
 Its name has 4 consonants.
 18: It is a Flower: its name is Flower2. It's a garden flower.
+Its natural habitat is desert.
 Its name has 4 consonants.
 19: It is a Flower: its name is Flower3. It's from a flower-bed.
+Its natural habitat is tundra.
 Its name has 4 consonants.
 Sorted container:
 Container contains 19 elements.
@@ -66,6 +70,7 @@ Its name has 2 consonants.
 Its natural habitat is forest.
 Its name has 2 consonants.
 4: It is a Flower: its name is tewte. It's a wild flower.
+Its natural habitat is forest.
 Its name has 3 consonants.
 5: It is a Bush: its name is Nyeea, its blooming month is January.
 Its natural habitat is field.
@@ -77,6 +82,7 @@ Its name has 0 consonants.
 Its natural habitat is field.
 Its name has 2 consonants.
 8: It is a Flower: its name is Flower1. It's a domestic flower.
+Its natural habitat is field.
 Its name has 4 consonants.
 9: It is a Bush: its name is Hoozooa, its blooming month is February.
 Its natural habitat is desert.
@@ -88,6 +94,7 @@ Its name has 3 consonants.
 Its natural habitat is desert.
 Its name has 3 consonants.
 12: It is a Flower: its name is Flower2. It's a garden flower.
+Its natural habitat is desert.
 Its name has 4 consonants.
 13: It is a Bush: its name is Shoom, its blooming month is March.
 Its natural habitat is tundra.
@@ -99,6 +106,7 @@ Its name has 3 consonants.
 Its natural habitat is tundra.
 Its name has 8 consonants.
 16: It is a Flower: its name is Flower3. It's from a flower-bed.
+Its natural habitat is tundra.
 Its name has 4 consonants.
 17: It is a Bush: its name is BushNumba4, its blooming month is April.
 Its natural habitat is jungle.

@@ -1,12 +1,15 @@
-﻿Построение начато 08.03.2017 23:18:49.
+﻿Построение начато 09.03.2017 14:23:38.
      1>Проект "C:\Users\Валерий\Documents\Visual Studio 2010\Methods\Methods1P\Methods1P\Methods1P.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
-         Обращение к "Debug\Methods1P.unsuccessfulbuild".
+         Создание "Debug\Methods1P.unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt functions.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt client.cpp functions.cpp
          functions.cpp
      1>c:\users\валерий\documents\visual studio 2010\methods\methods1p\methods1p\functions.cpp(196): warning C4101: 'pl' : unreferenced local variable
-     1>c:\users\валерий\documents\visual studio 2010\methods\methods1p\methods1p\functions.cpp(402): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\валерий\documents\visual studio 2010\methods\methods1p\methods1p\functions.cpp(421): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         client.cpp
        ManifestResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -26,4 +29,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:00.73
+Затраченное время: 00:00:05.04

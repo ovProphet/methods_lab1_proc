@@ -329,6 +329,25 @@ void Out(flower* &f, ofstream &ofst)
 		ofst << "It's from a flower-bed." << endl;
 		break;
 	}
+	
+	switch(f->habitat)
+	{
+	case DESERT:
+		ofst << "Its natural habitat is desert." << endl;
+		break;
+	case TUNDRA:
+		ofst << "Its natural habitat is tundra." << endl;
+		break;
+	case FOREST:
+		ofst << "Its natural habitat is forest." << endl;
+		break;
+	case JUNGLE:
+		ofst << "Its natural habitat is jungle." << endl;
+		break;
+	case FIELD:
+		ofst << "Its natural habitat is field." << endl;
+		break;
+	}
 	plant *p = (plant*)f;
 	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
 }
