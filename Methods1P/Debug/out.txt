@@ -1,132 +1,68 @@
 Start
 Filled container:
-Container contains 19 elements.
+Container contains 15 elements.
 1: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
-Its natural habitat is forest.
-Its name has 8 consonants.
+Its natural habitat is jungle.
 2: It is a Bush: its name is Nyeea, its blooming month is January.
-Its natural habitat is field.
-Its name has 1 consonants.
+Its natural habitat is jungle.
 3: It is a Bush: its name is Hoozooa, its blooming month is February.
-Its natural habitat is desert.
-Its name has 2 consonants.
+Its natural habitat is jungle.
 4: It is a Bush: its name is Shoom, its blooming month is March.
 Its natural habitat is tundra.
-Its name has 3 consonants.
 5: It is a Bush: its name is BushNumba4, its blooming month is April.
-Its natural habitat is jungle.
-Its name has 6 consonants.
+Its natural habitat is tundra.
 6: It is a Bush: its name is Poomoo, its blooming month is May.
-Its natural habitat is forest.
-Its name has 2 consonants.
+Its natural habitat is tundra.
 7: It is a Bush: its name is OOOOO))), its blooming month is June.
-Its natural habitat is field.
-Its name has 0 consonants.
+Its natural habitat is desert.
 8: It is a Bush: its name is Vasily, its blooming month is July.
 Its natural habitat is desert.
-Its name has 3 consonants.
 9: It is a Bush: its name is Sookomoo, its blooming month is August.
-Its natural habitat is tundra.
-Its name has 3 consonants.
+Its natural habitat is desert.
 10: It is a Bush: its name is Myeoo, its blooming month is September.
-Its natural habitat is jungle.
-Its name has 1 consonants.
+Its natural habitat is field.
 11: It is a Bush: its name is Toomoo, its blooming month is October.
-Its natural habitat is forest.
-Its name has 2 consonants.
+Its natural habitat is field.
 12: It is a Bush: its name is Mootoo, its blooming month is November.
 Its natural habitat is field.
-Its name has 2 consonants.
 13: It is a Bush: its name is Toomoonyee, its blooming month is December.
-Its natural habitat is desert.
-Its name has 3 consonants.
+Its natural habitat is forest.
 14: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
-Its natural habitat is tundra.
-Its name has 8 consonants.
+Its natural habitat is forest.
 15: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
-Its natural habitat is jungle.
-Its name has 3 consonants.
-16: It is a Flower: its name is tewte. It's a wild flower.
 Its natural habitat is forest.
-Its name has 3 consonants.
-17: It is a Flower: its name is Flower1. It's a domestic flower.
-Its natural habitat is field.
-Its name has 4 consonants.
-18: It is a Flower: its name is Flower2. It's a garden flower.
-Its natural habitat is desert.
-Its name has 4 consonants.
-19: It is a Flower: its name is Flower3. It's from a flower-bed.
-Its natural habitat is tundra.
-Its name has 4 consonants.
 Sorted container:
-Container contains 19 elements.
-1: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
+Container contains 15 elements.
+1: It is a Bush: its name is Toomoonyee, its blooming month is December.
 Its natural habitat is forest.
-Its name has 8 consonants.
-2: It is a Bush: its name is Poomoo, its blooming month is May.
-Its natural habitat is forest.
-Its name has 2 consonants.
-3: It is a Bush: its name is Toomoo, its blooming month is October.
-Its natural habitat is forest.
-Its name has 2 consonants.
-4: It is a Flower: its name is tewte. It's a wild flower.
-Its natural habitat is forest.
-Its name has 3 consonants.
-5: It is a Bush: its name is Nyeea, its blooming month is January.
-Its natural habitat is field.
-Its name has 1 consonants.
-6: It is a Bush: its name is OOOOO))), its blooming month is June.
-Its natural habitat is field.
-Its name has 0 consonants.
-7: It is a Bush: its name is Mootoo, its blooming month is November.
-Its natural habitat is field.
-Its name has 2 consonants.
-8: It is a Flower: its name is Flower1. It's a domestic flower.
-Its natural habitat is field.
-Its name has 4 consonants.
-9: It is a Bush: its name is Hoozooa, its blooming month is February.
-Its natural habitat is desert.
-Its name has 2 consonants.
-10: It is a Bush: its name is Vasily, its blooming month is July.
-Its natural habitat is desert.
-Its name has 3 consonants.
-11: It is a Bush: its name is Toomoonyee, its blooming month is December.
-Its natural habitat is desert.
-Its name has 3 consonants.
-12: It is a Flower: its name is Flower2. It's a garden flower.
-Its natural habitat is desert.
-Its name has 4 consonants.
-13: It is a Bush: its name is Shoom, its blooming month is March.
-Its natural habitat is tundra.
-Its name has 3 consonants.
-14: It is a Bush: its name is Sookomoo, its blooming month is August.
-Its natural habitat is tundra.
-Its name has 3 consonants.
-15: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
-Its natural habitat is tundra.
-Its name has 8 consonants.
-16: It is a Flower: its name is Flower3. It's from a flower-bed.
-Its natural habitat is tundra.
-Its name has 4 consonants.
-17: It is a Bush: its name is BushNumba4, its blooming month is April.
-Its natural habitat is jungle.
-Its name has 6 consonants.
-18: It is a Bush: its name is Myeoo, its blooming month is September.
-Its natural habitat is jungle.
-Its name has 1 consonants.
-19: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
-Its natural habitat is jungle.
-Its name has 3 consonants.
-Elements of the first type only:
-1: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
-Its natural habitat is forest.
-Its name has 8 consonants.
 2: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
-Its natural habitat is tundra.
-Its name has 8 consonants.
+Its natural habitat is forest.
 3: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
+Its natural habitat is forest.
+4: It is a Bush: its name is Myeoo, its blooming month is September.
+Its natural habitat is field.
+5: It is a Bush: its name is Toomoo, its blooming month is October.
+Its natural habitat is field.
+6: It is a Bush: its name is Mootoo, its blooming month is November.
+Its natural habitat is field.
+7: It is a Bush: its name is OOOOO))), its blooming month is June.
+Its natural habitat is desert.
+8: It is a Bush: its name is Vasily, its blooming month is July.
+Its natural habitat is desert.
+9: It is a Bush: its name is Sookomoo, its blooming month is August.
+Its natural habitat is desert.
+10: It is a Bush: its name is Shoom, its blooming month is March.
+Its natural habitat is tundra.
+11: It is a Bush: its name is BushNumba4, its blooming month is April.
+Its natural habitat is tundra.
+12: It is a Bush: its name is Poomoo, its blooming month is May.
+Its natural habitat is tundra.
+13: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
 Its natural habitat is jungle.
-Its name has 3 consonants.
+14: It is a Bush: its name is Nyeea, its blooming month is January.
+Its natural habitat is jungle.
+15: It is a Bush: its name is Hoozooa, its blooming month is February.
+Its natural habitat is jungle.
 Empty container:
 Container contains 0 elements.
 Stop

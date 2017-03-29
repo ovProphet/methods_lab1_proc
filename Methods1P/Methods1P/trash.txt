@@ -1,0 +1,9 @@
+1: It is a Tree: its name is Gnav-ov-Stryka, its age is estimated to be 2000000000000000 years.
+Its natural habitat is forest.
+Its name has 8 consonants.
+2: It is a Tree: its name is Kyr-Lun-Borgor, its age is estimated to be 55555 years.
+Its natural habitat is tundra.
+Its name has 8 consonants.
+3: It is a Tree: its name is Za-Bor, its age is estimated to be 1337 years.
+Its natural habitat is jungle.
+Its name has 3 consonants.

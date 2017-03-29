@@ -21,6 +21,9 @@
     <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="declarations.h">
@@ -32,6 +35,36 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="out.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sort_reverse.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sorted.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="one_sort.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="all_types.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="empty.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="trees.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bushes.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="flowers.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="no_trees.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="all_trees.txt">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

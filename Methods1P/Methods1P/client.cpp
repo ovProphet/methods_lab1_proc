@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include "declarations.h"
-
+#include "gtest/gtest.h"
 using namespace std;
 struct container;
+/*
 int main(int argc, char* argv[])
 {
 	if (argc != 3)
@@ -35,4 +36,4 @@ int main(int argc, char* argv[])
 
 	ofst<< "Stop" << endl;
 	return 0;
-}
+}*/

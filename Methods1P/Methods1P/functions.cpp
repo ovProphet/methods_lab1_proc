@@ -16,14 +16,17 @@ void Clear(container* &c)
 {
 	container *cur = c, *prev = c;
 	
-	while(cur->pl != NULL)
+	if(c != NULL)
 	{
-		prev = cur;
-		cur = cur->next;
-		delete prev;
-	}
+		while(cur->pl != NULL)
+		{
+			prev = cur;
+			cur = cur->next;
+			delete prev;
+		}
 
-	delete cur;
+		delete cur;
+	}
 	c = new container;
 	c->next = NULL;
 	c->pl = NULL;
