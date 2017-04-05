@@ -137,39 +137,35 @@ TEST(sort_container, empty_container)
 }
 TEST(consonant,no_consonants)
 {
-	ofstream ofst("trash.txt");
 	plant* p = new plant;
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "AAAaAAoIOEEEEUOuioeoa";
-	EXPECT_EQ(consonant(p,ofst),0);
+	EXPECT_EQ(consonant(p),0);
 }
 TEST(consonant,all_consonants)
 {
-	ofstream ofst("trash.txt");
 	plant* p = new plant;
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "QWRTPSDFGHJKLZXCVBNMqwrtpsdfghjklzxcvbnm";
-	EXPECT_EQ(consonant(p,ofst),40);
+	EXPECT_EQ(consonant(p),40);
 }
 TEST(consonant,empty_string)
 {
-	ofstream ofst("trash.txt");
 	plant* p = new plant;
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "";
-	EXPECT_EQ(consonant(p,ofst),0);
+	EXPECT_EQ(consonant(p),0);
 }
 TEST(consonant,orchid)
 {
-	ofstream ofst("trash.txt");
 	plant* p = new plant;
 	p->habitat = FOREST;
 	p->k = FLOWER;
 	p->name = "Orchidaceae";
-	EXPECT_EQ(consonant(p,ofst),5);
+	EXPECT_EQ(consonant(p),5);
 }
 TEST(plant_in,all_at_once)
 {
@@ -477,10 +473,11 @@ TODO:
 + int consonant(plant* &p, ofstream &ofst);
 
 */
+/*
 int main(int argc, char* argv[])
 {
 	testing::InitGoogleTest(&argc, argv);
 	RUN_ALL_TESTS();
 	std::getchar();
 	return 0;
-}
+}*/

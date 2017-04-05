@@ -56,4 +56,4 @@ void Out(flower* &f, ofstream &ofst);
 void Out(plant* &p, ofstream &ofst);
 void OutFirstOnly(container* &p, ofstream &ofst);
 void Sort(container* &c);
-int consonant(plant* &p, ofstream &ofst);
+int consonant(plant* &p);

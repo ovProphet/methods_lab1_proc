@@ -1,9 +1,42 @@
 #include <iostream>
 #include <fstream>
+#include <exception>
 #include "declarations.h"
 using namespace std;
 
 struct container;
+void CheckValueArea(int value, int a, int b)
+{
+	if (!(a <= value && value <= b))
+	{
+		cout << "Incorrect input values." << endl;
+		exit(1);
+	}
+}
+void InputFileCheck(ifstream& ifst)
+{
+	if(!ifst)
+	{
+		cout << "Cannot open input file." << endl;
+		exit(1);
+	}
+}
+void InputValuesCheck(ifstream& ifst)
+{
+	if(ifst.fail())
+	{
+		cout << "Incorrect input values." << endl;
+		exit(1);
+	}
+}
+void OutputFileCheck(ofstream& ofst)
+{
+	if(!ofst)
+	{
+		cout << "Cannot open output file." << endl;
+		exit(1);
+	}
+}
 void Init(container* &c)
 {
 	//new init
@@ -34,6 +67,7 @@ void Clear(container* &c)
 }
 void In(container* &c, ifstream &ifst)
 {
+	InputFileCheck(ifst);
 	container *cur = c;
 	int cnt = 0;
 	while(!ifst.eof())
@@ -57,6 +91,7 @@ void In(container* &c, ifstream &ifst)
 }
 void Out(container* &c, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	ofst << "Container contains " << c->len << " elements." << endl;
 	container* cur = c;
 	int counter = 0;
@@ -69,9 +104,18 @@ void Out(container* &c, ofstream &ofst)
 }
 void In(tree* &t, ifstream &ifst)
 {
+	InputFileCheck(ifst);
 	ifst >> t->name >> t->age;
+	InputValuesCheck(ifst);
+	if(t->age < 0)
+	{
+		cout << "Incorrect input values." << endl;
+		exit(1);
+	}
 	int x;
 	ifst >> x;
+	InputValuesCheck(ifst);
+	CheckValueArea(x,0,4);
 	switch(x)
 	{
 	case 0:
@@ -93,8 +137,11 @@ void In(tree* &t, ifstream &ifst)
 }
 void In(bush* &b, ifstream &ifst)
 {
+	InputFileCheck(ifst);
 	int mon;
 	ifst >> b->name >> mon;
+	InputValuesCheck(ifst);
+	CheckValueArea(mon,0,11);
 	switch(mon)
 	{
 	case 0:
@@ -136,6 +183,8 @@ void In(bush* &b, ifstream &ifst)
 	}
 	int x;
 	ifst >> x;
+	InputValuesCheck(ifst);
+	CheckValueArea(x,0,4);
 	switch(x)
 	{
 	case 0:
@@ -157,8 +206,11 @@ void In(bush* &b, ifstream &ifst)
 }
 void In(flower* &f, ifstream &ifst)
 {
+	InputFileCheck(ifst);
 	int x;
 	ifst >> f->name >> x;
+	InputValuesCheck(ifst);
+	CheckValueArea(x,0,3);
 	switch(x)
 	{
 	case 0:
@@ -175,6 +227,8 @@ void In(flower* &f, ifstream &ifst)
 		break;
 	}
 	ifst >> x;
+	InputValuesCheck(ifst);
+	CheckValueArea(x,0,4);
 	switch(x)
 	{
 	case 0:
@@ -196,12 +250,19 @@ void In(flower* &f, ifstream &ifst)
 }
 plant* In(ifstream &ifst)
 {
+	InputFileCheck(ifst);
 	plant *pl;
 	tree* t;
 	bush* b;
 	flower* f;
 	int k;
 	ifst >> k;
+	if(ifst.eof())
+	{
+		return NULL;
+	}
+	InputValuesCheck(ifst);
+	CheckValueArea(k,1,3);
 	switch(k)
 	{
 	case 1:
@@ -225,6 +286,7 @@ plant* In(ifstream &ifst)
 }
 void Out(bush* &b, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	ofst << "It is a Bush: its name is " << b->name << ", its blooming month is ";
 	switch(b->blooming)
 	{
@@ -286,11 +348,11 @@ void Out(bush* &b, ofstream &ofst)
 	}
 
 	plant *p = (plant*)b;
-	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
-
+	ofst << "Its name has " << consonant(p) << " consonants.\n";
 }
 void Out(tree* &t, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
 
 	switch(t->habitat)
@@ -312,10 +374,11 @@ void Out(tree* &t, ofstream &ofst)
 		break;
 	}
 	plant *p = (plant*)t;
-	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
+	ofst << "Its name has " << consonant(p) << " consonants.\n";
 }
 void Out(flower* &f, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	ofst << "It is a Flower: its name is " << f->name << ". ";
 	switch(f->type)
 	{
@@ -352,10 +415,11 @@ void Out(flower* &f, ofstream &ofst)
 		break;
 	}
 	plant *p = (plant*)f;
-	ofst << "Its name has " << consonant(p,ofst) << " consonants.\n";
+	ofst << "Its name has " << consonant(p) << " consonants.\n";
 }
 void Out(plant* &p, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	tree* t;
 	bush* b;
 	flower* f;
@@ -379,6 +443,7 @@ void Out(plant* &p, ofstream &ofst)
 }
 void OutFirstOnly(container* &c, ofstream &ofst)
 {
+	OutputFileCheck(ofst);
 	container* cur = c;
 	int counter = 0;
 	while(cur->pl != NULL)
@@ -416,7 +481,7 @@ void Sort(container* &c)
 			break;
 	}
 }
-int consonant(plant* &p, ofstream &ofst)
+int consonant(plant* &p)
 {
 	int res = 0;
 	string cur = p->name;
@@ -426,6 +491,11 @@ int consonant(plant* &p, ofstream &ofst)
 		int c = count(cur.begin(),cur.end(), alphabet[i]);
 		if (c > 0)
 			res += c;
+		if (res < 0)
+		{
+			cout << "Integer overflow." << endl;
+			exit(1);
+		}
 	}
 	return res;
 }
