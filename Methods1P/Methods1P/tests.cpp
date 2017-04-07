@@ -9,121 +9,121 @@ TEST(init_container,empty_container)
 {
 	container* c = NULL;
 	Init(c);
-	EXPECT_EQ(c->len,0);
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_EQ(c->length,0);
+	EXPECT_TRUE(c->plant == NULL);
 	EXPECT_TRUE(c->next == NULL);
 }
 TEST(init_container,nonempty_container)
 {
 	container* c = NULL;
 	c = new container;
-	c->len = 54;
+	c->length = 54;
 	c->next = new container;
-	c->pl = new plant;
+	c->plant = new plant;
 	Init(c);
-	EXPECT_EQ(c->len,0);
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_EQ(c->length,0);
+	EXPECT_TRUE(c->plant == NULL);
 	EXPECT_TRUE(c->next == NULL);
 }
 TEST(clear_container,empty_container)
 {
 	container* c = NULL;
 	Clear(c);
-	EXPECT_EQ(c->len,0);
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_EQ(c->length,0);
+	EXPECT_TRUE(c->plant == NULL);
 	EXPECT_TRUE(c->next == NULL);
 }
 TEST(clear_container,nonempty_container)
 {
 	container* c = NULL;
 	c = new container;
-	c->len = 3;
-	c->pl = new plant;
+	c->length = 3;
+	c->plant = new plant;
 	c->next = new container;
-	c->next->pl = new plant;
+	c->next->plant = new plant;
 	c->next->next = new container;
-	c->next->next->pl = new plant;
+	c->next->next->plant = new plant;
 	c->next->next->next = new container;
 	c->next->next->next->next = NULL;
-	c->next->next->next->pl = NULL;
+	c->next->next->next->plant = NULL;
 	Clear(c);
-	EXPECT_EQ(c->len,0);
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_EQ(c->length,0);
+	EXPECT_TRUE(c->plant == NULL);
 	EXPECT_TRUE(c->next == NULL);
 }
 TEST(sort_container, reverse_container)
 {
-	ifstream ifst("sort_reverse.txt");
+	ifstream inputFile("sort_reverse.txt");
 	container* c,*first;
 	Init(c);
 	first=c;
-	In(c,ifst);
+	In(c,inputFile);
 	Sort(c);
-	EXPECT_TRUE(c->pl->name == "tewte" || c->pl->name == "Toomoo");
+	EXPECT_TRUE(c->plant->name == "tewte" || c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "tewte" || c->pl->name == "Toomoo");
+	EXPECT_TRUE(c->plant->name == "tewte" || c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "OOOOO)))" || c->pl->name == "Nyeea");
+	EXPECT_TRUE(c->plant->name == "OOOOO)))" || c->plant->name == "Nyeea");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "OOOOO)))" || c->pl->name == "Nyeea");
+	EXPECT_TRUE(c->plant->name == "OOOOO)))" || c->plant->name == "Nyeea");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Toomoonyee" || c->pl->name == "Vasily");
+	EXPECT_TRUE(c->plant->name == "Toomoonyee" || c->plant->name == "Vasily");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Toomoonyee" || c->pl->name == "Vasily");
+	EXPECT_TRUE(c->plant->name == "Toomoonyee" || c->plant->name == "Vasily");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Sookomoo" || c->pl->name == "Flower3");
+	EXPECT_TRUE(c->plant->name == "Sookomoo" || c->plant->name == "Flower3");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Sookomoo" || c->pl->name == "Flower3");
+	EXPECT_TRUE(c->plant->name == "Sookomoo" || c->plant->name == "Flower3");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Za-Bor" || c->pl->name == "BushNumba4");
+	EXPECT_TRUE(c->plant->name == "Za-Bor" || c->plant->name == "BushNumba4");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Za-Bor" || c->pl->name == "BushNumba4");
+	EXPECT_TRUE(c->plant->name == "Za-Bor" || c->plant->name == "BushNumba4");
 	c = c->next;
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_TRUE(c->plant == NULL);
 	Clear(first);
 }
 TEST(sort_container, sorted_container)
 {
-	ifstream ifst("sorted.txt");
+	ifstream inputFile("sorted.txt");
 	container* c,*first;
 	Init(c);
 	first=c;
-	In(c,ifst);
+	In(c,inputFile);
 	Sort(c);
-	EXPECT_TRUE(c->pl->name == "tewte" || c->pl->name == "Toomoo");
+	EXPECT_TRUE(c->plant->name == "tewte" || c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "tewte" || c->pl->name == "Toomoo");
+	EXPECT_TRUE(c->plant->name == "tewte" || c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "OOOOO)))" || c->pl->name == "Nyeea");
+	EXPECT_TRUE(c->plant->name == "OOOOO)))" || c->plant->name == "Nyeea");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "OOOOO)))" || c->pl->name == "Nyeea");
+	EXPECT_TRUE(c->plant->name == "OOOOO)))" || c->plant->name == "Nyeea");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Toomoonyee" || c->pl->name == "Vasily");
+	EXPECT_TRUE(c->plant->name == "Toomoonyee" || c->plant->name == "Vasily");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Toomoonyee" || c->pl->name == "Vasily");
+	EXPECT_TRUE(c->plant->name == "Toomoonyee" || c->plant->name == "Vasily");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Sookomoo" || c->pl->name == "Flower3");
+	EXPECT_TRUE(c->plant->name == "Sookomoo" || c->plant->name == "Flower3");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Sookomoo" || c->pl->name == "Flower3");
+	EXPECT_TRUE(c->plant->name == "Sookomoo" || c->plant->name == "Flower3");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Za-Bor" || c->pl->name == "BushNumba4");
+	EXPECT_TRUE(c->plant->name == "Za-Bor" || c->plant->name == "BushNumba4");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Za-Bor" || c->pl->name == "BushNumba4");
+	EXPECT_TRUE(c->plant->name == "Za-Bor" || c->plant->name == "BushNumba4");
 	c = c->next;
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_TRUE(c->plant == NULL);
 	Clear(first);
 }
 TEST(sort_container, one_element_container)
 {
-	ifstream ifst("one_sort.txt");
+	ifstream inputFile("one_sort.txt");
 	container* c,*first;
 	Init(c);
 	first=c;
-	In(c,ifst);
+	In(c,inputFile);
 	Sort(c);
-	EXPECT_TRUE(c->pl->name == "tewte" || c->pl->name == "Toomoo");
+	EXPECT_TRUE(c->plant->name == "tewte" || c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_TRUE(c->plant == NULL);
 	Clear(first);
 }
 TEST(sort_container, empty_container)
@@ -132,7 +132,7 @@ TEST(sort_container, empty_container)
 	Init(c);
 	first=c;
 	Sort(c);
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_TRUE(c->plant == NULL);
 	Clear(first);
 }
 TEST(consonant,no_consonants)
@@ -141,7 +141,7 @@ TEST(consonant,no_consonants)
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "AAAaAAoIOEEEEUOuioeoa";
-	EXPECT_EQ(consonant(p),0);
+	EXPECT_EQ(Consonant(p),0);
 }
 TEST(consonant,all_consonants)
 {
@@ -149,7 +149,7 @@ TEST(consonant,all_consonants)
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "QWRTPSDFGHJKLZXCVBNMqwrtpsdfghjklzxcvbnm";
-	EXPECT_EQ(consonant(p),40);
+	EXPECT_EQ(Consonant(p),40);
 }
 TEST(consonant,empty_string)
 {
@@ -157,7 +157,7 @@ TEST(consonant,empty_string)
 	p->habitat = TUNDRA;
 	p->k = TREE;
 	p->name = "";
-	EXPECT_EQ(consonant(p),0);
+	EXPECT_EQ(Consonant(p),0);
 }
 TEST(consonant,orchid)
 {
@@ -165,40 +165,40 @@ TEST(consonant,orchid)
 	p->habitat = FOREST;
 	p->k = FLOWER;
 	p->name = "Orchidaceae";
-	EXPECT_EQ(consonant(p),5);
+	EXPECT_EQ(Consonant(p),5);
 }
 TEST(plant_in,all_at_once)
 {
-	ifstream ifst("all_types.txt");
+	ifstream inputFile("all_types.txt");
 	plant* p;
-	p = In(ifst);
+	p = In(inputFile);
 	EXPECT_TRUE(p->habitat == FOREST);
 	EXPECT_TRUE(p->name == "Toomoo");
 	EXPECT_TRUE(p->k == BUSH);
-	p = In(ifst);
+	p = In(inputFile);
 	EXPECT_TRUE(p->habitat == FOREST);
 	EXPECT_TRUE(p->name == "tewte");
 	EXPECT_TRUE(p->k == FLOWER);
-	p = In(ifst);
+	p = In(inputFile);
 	EXPECT_TRUE(p->habitat == JUNGLE);
 	EXPECT_TRUE(p->name == "Za-Bor");
 	EXPECT_TRUE(p->k == TREE);
 }
 TEST(output_container,empty)
 {
-	ofstream ofst("trash.txt");
+	ofstream outputFile("trash.txt");
 	container* c,*first;
 	Init(c);
-	Out(c,ofst);
+	Out(c,outputFile);
 	Clear(c);
 }
 TEST(output_container,nonempty)
 {
-	ofstream ofst("trash.txt");
+	ofstream outputFile("trash.txt");
 	container* c,*first;
 	Init(c);
 	In(c,ifstream("sorted.txt"));
-	Out(c,ofst);
+	Out(c,outputFile);
 	Clear(c);
 }
 TEST(input_container,all_at_once)
@@ -207,28 +207,28 @@ TEST(input_container,all_at_once)
 	Init(c);
 	first = c;
 	In(c,ifstream("sorted.txt"));
-	EXPECT_EQ(c->len,10);
-	EXPECT_TRUE(c->pl->name == "Toomoo");
+	EXPECT_EQ(c->length,10);
+	EXPECT_TRUE(c->plant->name == "Toomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "tewte");
+	EXPECT_TRUE(c->plant->name == "tewte");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Nyeea");
+	EXPECT_TRUE(c->plant->name == "Nyeea");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "OOOOO)))");
+	EXPECT_TRUE(c->plant->name == "OOOOO)))");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Toomoonyee");
+	EXPECT_TRUE(c->plant->name == "Toomoonyee");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Vasily");
+	EXPECT_TRUE(c->plant->name == "Vasily");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Flower3");
+	EXPECT_TRUE(c->plant->name == "Flower3");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Sookomoo");
+	EXPECT_TRUE(c->plant->name == "Sookomoo");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "BushNumba4");
+	EXPECT_TRUE(c->plant->name == "BushNumba4");
 	c = c->next;
-	EXPECT_TRUE(c->pl->name == "Za-Bor");
+	EXPECT_TRUE(c->plant->name == "Za-Bor");
 	c = c->next;
-	EXPECT_TRUE(c->pl == NULL);
+	EXPECT_TRUE(c->plant == NULL);
 	Clear(first);
 }
 TEST(input_container,empty)
@@ -236,109 +236,109 @@ TEST(input_container,empty)
 	container* c;
 	Init(c);
 	In(c,ifstream("empty.txt"));
-	EXPECT_EQ(c->len,0);
-	EXPECT_TRUE(c->pl==NULL);
-	EXPECT_TRUE(c->next==NULL);
+	EXPECT_EQ(c->length, 0);
+	EXPECT_TRUE(c->plant == NULL);
+	EXPECT_TRUE(c->next == NULL);
 }
 TEST(input_tree,all_at_once)
 {
-	ifstream ifst("trees.txt");
+	ifstream inputFile("trees.txt");
 	tree* tr = new tree;
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->age == 2000000000000000);
 	EXPECT_TRUE(tr->name == "Gnav-ov-Stryka");
 	EXPECT_TRUE(tr->habitat == FOREST);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->age == 55555);
 	EXPECT_TRUE(tr->name == "Kyr-Lun-Borgor");
 	EXPECT_TRUE(tr->habitat == FIELD);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->age == 55555);
 	EXPECT_TRUE(tr->name == "Kyr-Lun-Borgor");
 	EXPECT_TRUE(tr->habitat == DESERT);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->age == 55555);
 	EXPECT_TRUE(tr->name == "Kyr-Lun-Borgor");
 	EXPECT_TRUE(tr->habitat == TUNDRA);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->age == 1337);
 	EXPECT_TRUE(tr->name == "Za-Bor");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
 }
 TEST(input_bush,all_at_once)
 {
-	ifstream ifst("bushes.txt");
+	ifstream inputFile("bushes.txt");
 	bush* tr = new bush;
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::MAY);
 	EXPECT_TRUE(tr->name == "Poomoo");
 	EXPECT_TRUE(tr->habitat == FOREST);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::JAN);
 	EXPECT_TRUE(tr->name == "Nyeea");
 	EXPECT_TRUE(tr->habitat == FIELD);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::FEB);
 	EXPECT_TRUE(tr->name == "Hoozooa");
 	EXPECT_TRUE(tr->habitat == DESERT);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::MAR);
 	EXPECT_TRUE(tr->name == "Shoom");
 	EXPECT_TRUE(tr->habitat == TUNDRA);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::APR);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::JUN);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::JUL);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::AUG);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::SEP);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::OCT);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::NOV);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->blooming == bush::DEC);
 	EXPECT_TRUE(tr->name == "BushNumba4");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
 }
 TEST(input_flower,all_at_once)
 {
-	ifstream ifst("flowers.txt");
+	ifstream inputFile("flowers.txt");
 	flower* tr = new flower;
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->type == flower::WILD);
 	EXPECT_TRUE(tr->name == "tewte");
 	EXPECT_TRUE(tr->habitat == FOREST);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->type == flower::DOMESTIC);
 	EXPECT_TRUE(tr->name == "Flower1");
 	EXPECT_TRUE(tr->habitat == FIELD);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->type == flower::GARDEN);
 	EXPECT_TRUE(tr->name == "Flower2");
 	EXPECT_TRUE(tr->habitat == DESERT);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->type == flower::BED);
 	EXPECT_TRUE(tr->name == "Flower3");
 	EXPECT_TRUE(tr->habitat == TUNDRA);
-	In(tr, ifst);
+	In(tr, inputFile);
 	EXPECT_TRUE(tr->type == flower::BED);
 	EXPECT_TRUE(tr->name == "Flower3");
 	EXPECT_TRUE(tr->habitat == JUNGLE);
@@ -418,12 +418,12 @@ TEST(output_flower,all_at_once)
 TEST(output_plant,all_at_once)
 {
 	plant* pl;
-	ifstream ifst("sort_reverse.txt");
-	pl = In(ifst);
+	ifstream inputFile("sort_reverse.txt");
+	pl = In(inputFile);
 	Out(pl,ofstream("trash.txt"));
-	pl = In(ifst);
+	pl = In(inputFile);
 	Out(pl,ofstream("trash.txt"));
-	pl = In(ifst);
+	pl = In(inputFile);
 	Out(pl,ofstream("trash.txt"));
 }
 TEST(output_trees_only,no_trees)
@@ -458,12 +458,12 @@ TEST(output_trees_only,mixed)
 TODO:
 + void Init(container* &c);
 + void Clear(container* &c);
-+ void In(container* &c, ifstream &ifst);
++ void In(container* &c, ifstream &inputFile);
 + void Out(container* &c, ofstream &ofst);
-+ void In(tree* &t, ifstream &ifst);
-+ void In(flower* &f, ifstream &ifst);
-+ void In(bush* &b, ifstream &ifst);
-+ plant* In(ifstream &ifst);
++ void In(tree* &t, ifstream &inputFile);
++ void In(flower* &f, ifstream &inputFile);
++ void In(bush* &b, ifstream &inputFile);
++ plant* In(ifstream &inputFile);
 + void Out(bush* &b, ofstream &ofst);
 + void Out(tree* &t, ofstream &ofst);
 + void Out(flower* &f, ofstream &ofst);

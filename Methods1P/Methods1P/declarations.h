@@ -4,8 +4,8 @@
 #include <algorithm>
 
 using namespace std;
-enum hab{FOREST,FIELD,DESERT,TUNDRA,JUNGLE};
-enum key{TREE,BUSH,FLOWER};
+enum hab{FOREST, FIELD, DESERT, TUNDRA, JUNGLE};
+enum key{TREE, BUSH, FLOWER};
 struct plant
 {
 	key k;
@@ -38,22 +38,22 @@ struct flower
 struct container
 {
 	container *next;
-	plant *pl;
-	int len;
+	plant *plant;
+	int length;
 };
 
 void Init(container* &c);
 void Clear(container* &c);
-void In(container* &c, ifstream &ifst);
-void Out(container* &c, ofstream &ofst);
-void In(tree* &t, ifstream &ifst);
-void In(flower* &f, ifstream &ifst);
-void In(bush* &b, ifstream &ifst);
-plant* In(ifstream &ifst);
-void Out(bush* &b, ofstream &ofst);
-void Out(tree* &t, ofstream &ofst);
-void Out(flower* &f, ofstream &ofst);
-void Out(plant* &p, ofstream &ofst);
-void OutFirstOnly(container* &p, ofstream &ofst);
+void In(container* &c, ifstream &inputFile);
+void Out(container* &c, ofstream &outputFile);
+void In(tree* &t, ifstream &inputFile);
+void In(flower* &f, ifstream &inputFile);
+void In(bush* &b, ifstream &inputFile);
+plant* In(ifstream &inputFile);
+void Out(bush* &b, ofstream &outputFile);
+void Out(tree* &t, ofstream &outputFile);
+void Out(flower* &f, ofstream &outputFile);
+void Out(plant* &p, ofstream &outputFile);
+void OutFirstOnly(container* &p, ofstream &outputFile);
 void Sort(container* &c);
-int consonant(plant* &p);
+int Consonant(plant* &p);

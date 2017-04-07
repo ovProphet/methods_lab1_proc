@@ -13,25 +13,25 @@ void CheckValueArea(int value, int a, int b)
 		exit(1);
 	}
 }
-void InputFileCheck(ifstream& ifst)
+void InputFileCheck(ifstream& inputFile)
 {
-	if(!ifst)
+	if(!inputFile)
 	{
 		cout << "Cannot open input file." << endl;
 		exit(1);
 	}
 }
-void InputValuesCheck(ifstream& ifst)
+void InputValuesCheck(ifstream& inputFile)
 {
-	if(ifst.fail())
+	if(inputFile.fail())
 	{
 		cout << "Incorrect input values." << endl;
 		exit(1);
 	}
 }
-void OutputFileCheck(ofstream& ofst)
+void OutputFileCheck(ofstream& outputFile)
 {
-	if(!ofst)
+	if(!outputFile)
 	{
 		cout << "Cannot open output file." << endl;
 		exit(1);
@@ -42,8 +42,8 @@ void Init(container* &c)
 	//new init
 	c = new container;
 	c->next = NULL;
-	c->pl = NULL;
-	c->len = 0;
+	c->plant = NULL;
+	c->length = 0;
 }
 void Clear(container* &c)
 {
@@ -51,7 +51,7 @@ void Clear(container* &c)
 	
 	if(c != NULL)
 	{
-		while(cur->pl != NULL)
+		while(cur->plant != NULL)
 		{
 			prev = cur;
 			cur = cur->next;
@@ -62,59 +62,59 @@ void Clear(container* &c)
 	}
 	c = new container;
 	c->next = NULL;
-	c->pl = NULL;
-	c->len = 0;
+	c->plant = NULL;
+	c->length = 0;
 }
-void In(container* &c, ifstream &ifst)
+void In(container* &c, ifstream &inputFile)
 {
-	InputFileCheck(ifst);
+	InputFileCheck(inputFile);
 	container *cur = c;
 	int cnt = 0;
-	while(!ifst.eof())
+	while(!inputFile.eof())
 	{
 		plant *p;
-		if((p = In(ifst))!=0)
+		if((p = In(inputFile))!=0)
 		{
 			if(cnt == 0)
 				cur = c;
-			c->pl = p;
+			c->plant = p;
 			c->next = new container;
 			c->next->next = NULL;
-			c->next->pl = NULL;
-			c->next->len = 0;
+			c->next->plant = NULL;
+			c->next->length = 0;
 			c = c->next;
 			++cnt;
 		}
 	}
 	c = cur;
-	c->len = cnt;
+	c->length = cnt;
 }
-void Out(container* &c, ofstream &ofst)
+void Out(container* &c, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
-	ofst << "Container contains " << c->len << " elements." << endl;
+	OutputFileCheck(outputFile);
+	outputFile << "Container contains " << c->length << " elements." << endl;
 	container* cur = c;
 	int counter = 0;
-	while(cur->pl != NULL)
+	while(cur->plant != NULL)
 	{
-		ofst << ++counter << ": ";
-		Out((plant*)cur->pl, ofst);
+		outputFile << ++counter << ": ";
+		Out((plant*)cur->plant, outputFile);
 		cur = cur->next;
 	}
 }
-void In(tree* &t, ifstream &ifst)
+void In(tree* &t, ifstream &inputFile)
 {
-	InputFileCheck(ifst);
-	ifst >> t->name >> t->age;
-	InputValuesCheck(ifst);
+	InputFileCheck(inputFile);
+	inputFile >> t->name >> t->age;
+	InputValuesCheck(inputFile);
 	if(t->age < 0)
 	{
 		cout << "Incorrect input values." << endl;
 		exit(1);
 	}
 	int x;
-	ifst >> x;
-	InputValuesCheck(ifst);
+	inputFile >> x;
+	InputValuesCheck(inputFile);
 	CheckValueArea(x,0,4);
 	switch(x)
 	{
@@ -135,14 +135,14 @@ void In(tree* &t, ifstream &ifst)
 		break;
 	}
 }
-void In(bush* &b, ifstream &ifst)
+void In(bush* &b, ifstream &inputFile)
 {
-	InputFileCheck(ifst);
-	int mon;
-	ifst >> b->name >> mon;
-	InputValuesCheck(ifst);
-	CheckValueArea(mon,0,11);
-	switch(mon)
+	InputFileCheck(inputFile);
+	int month;
+	inputFile >> b->name >> month;
+	InputValuesCheck(inputFile);
+	CheckValueArea(month, 0, 11);
+	switch(month)
 	{
 	case 0:
 		b->blooming = bush::JAN;
@@ -182,9 +182,9 @@ void In(bush* &b, ifstream &ifst)
 		break;
 	}
 	int x;
-	ifst >> x;
-	InputValuesCheck(ifst);
-	CheckValueArea(x,0,4);
+	inputFile >> x;
+	InputValuesCheck(inputFile);
+	CheckValueArea(x, 0, 4);
 	switch(x)
 	{
 	case 0:
@@ -204,13 +204,13 @@ void In(bush* &b, ifstream &ifst)
 		break;
 	}
 }
-void In(flower* &f, ifstream &ifst)
+void In(flower* &f, ifstream &inputFile)
 {
-	InputFileCheck(ifst);
+	InputFileCheck(inputFile);
 	int x;
-	ifst >> f->name >> x;
-	InputValuesCheck(ifst);
-	CheckValueArea(x,0,3);
+	inputFile >> f->name >> x;
+	InputValuesCheck(inputFile);
+	CheckValueArea(x, 0, 3);
 	switch(x)
 	{
 	case 0:
@@ -226,9 +226,9 @@ void In(flower* &f, ifstream &ifst)
 		f->type = flower::BED;
 		break;
 	}
-	ifst >> x;
-	InputValuesCheck(ifst);
-	CheckValueArea(x,0,4);
+	inputFile >> x;
+	InputValuesCheck(inputFile);
+	CheckValueArea(x, 0, 4);
 	switch(x)
 	{
 	case 0:
@@ -248,178 +248,178 @@ void In(flower* &f, ifstream &ifst)
 		break;
 	}
 }
-plant* In(ifstream &ifst)
+plant* In(ifstream &inputFile)
 {
-	InputFileCheck(ifst);
+	InputFileCheck(inputFile);
 	plant *pl;
 	tree* t;
 	bush* b;
 	flower* f;
 	int k;
-	ifst >> k;
-	if(ifst.eof())
+	inputFile >> k;
+	if(inputFile.eof())
 	{
 		return NULL;
 	}
-	InputValuesCheck(ifst);
-	CheckValueArea(k,1,3);
+	InputValuesCheck(inputFile);
+	CheckValueArea(k, 1, 3);
 	switch(k)
 	{
 	case 1:
 		t = new tree;
 		t->k = TREE;
-		In(t,ifst);
+		In(t,inputFile);
 		return (plant*)t;
 	case 2:
 		b = new bush;
 		b->k = BUSH;
-		In(b,ifst);
+		In(b,inputFile);
 		return (plant*)b;
 	case 3:
 		f = new flower;
 		f->k = FLOWER;
-		In(f,ifst);
+		In(f,inputFile);
 		return (plant*)f;
 	default:
 		return 0;
 	}
 }
-void Out(bush* &b, ofstream &ofst)
+void Out(bush* &b, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
-	ofst << "It is a Bush: its name is " << b->name << ", its blooming month is ";
+	OutputFileCheck(outputFile);
+	outputFile << "It is a Bush: its name is " << b->name << ", its blooming month is ";
 	switch(b->blooming)
 	{
 	case bush::JAN:
-		ofst << "January." << endl;
+		outputFile << "January." << endl;
 		break;
 	case bush::FEB:
-		ofst << "February." << endl;
+		outputFile << "February." << endl;
 		break;
 	case bush::MAR:
-		ofst << "March." << endl;
+		outputFile << "March." << endl;
 		break;
 	case bush::APR:
-		ofst << "April." << endl;
+		outputFile << "April." << endl;
 		break;
 	case bush::MAY:
-		ofst << "May." << endl;
+		outputFile << "May." << endl;
 		break;
 	case bush::JUN:
-		ofst << "June." << endl;
+		outputFile << "June." << endl;
 		break;
 	case bush::JUL:
-		ofst << "July." << endl;
+		outputFile << "July." << endl;
 		break;
 	case bush::AUG:
-		ofst << "August." << endl;
+		outputFile << "August." << endl;
 		break;
 	case bush::SEP:
-		ofst << "September." << endl;
+		outputFile << "September." << endl;
 		break;
 	case bush::OCT:
-		ofst << "October." << endl;
+		outputFile << "October." << endl;
 		break;
 	case bush::NOV:
-		ofst << "November." << endl;
+		outputFile << "November." << endl;
 		break;
 	case bush::DEC:
-		ofst << "December." << endl;
+		outputFile << "December." << endl;
 		break;
 	}
 
 	switch(b->habitat)
 	{
 	case DESERT:
-		ofst << "Its natural habitat is desert." << endl;
+		outputFile << "Its natural habitat is desert." << endl;
 		break;
 	case TUNDRA:
-		ofst << "Its natural habitat is tundra." << endl;
+		outputFile << "Its natural habitat is tundra." << endl;
 		break;
 	case FOREST:
-		ofst << "Its natural habitat is forest." << endl;
+		outputFile << "Its natural habitat is forest." << endl;
 		break;
 	case JUNGLE:
-		ofst << "Its natural habitat is jungle." << endl;
+		outputFile << "Its natural habitat is jungle." << endl;
 		break;
 	case FIELD:
-		ofst << "Its natural habitat is field." << endl;
+		outputFile << "Its natural habitat is field." << endl;
 		break;
 	}
 
 	plant *p = (plant*)b;
-	ofst << "Its name has " << consonant(p) << " consonants.\n";
+	outputFile << "Its name has " << Consonant(p) << " consonants.\n";
 }
-void Out(tree* &t, ofstream &ofst)
+void Out(tree* &t, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
-	ofst << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
+	OutputFileCheck(outputFile);
+	outputFile << "It is a Tree: its name is " << t->name << ", its age is estimated to be " << t->age << " years." << endl;
 
 	switch(t->habitat)
 	{
 	case DESERT:
-		ofst << "Its natural habitat is desert." << endl;
+		outputFile << "Its natural habitat is desert." << endl;
 		break;
 	case TUNDRA:
-		ofst << "Its natural habitat is tundra." << endl;
+		outputFile << "Its natural habitat is tundra." << endl;
 		break;
 	case FOREST:
-		ofst << "Its natural habitat is forest." << endl;
+		outputFile << "Its natural habitat is forest." << endl;
 		break;
 	case JUNGLE:
-		ofst << "Its natural habitat is jungle." << endl;
+		outputFile << "Its natural habitat is jungle." << endl;
 		break;
 	case FIELD:
-		ofst << "Its natural habitat is field." << endl;
+		outputFile << "Its natural habitat is field." << endl;
 		break;
 	}
 	plant *p = (plant*)t;
-	ofst << "Its name has " << consonant(p) << " consonants.\n";
+	outputFile << "Its name has " << Consonant(p) << " consonants.\n";
 }
-void Out(flower* &f, ofstream &ofst)
+void Out(flower* &f, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
-	ofst << "It is a Flower: its name is " << f->name << ". ";
+	OutputFileCheck(outputFile);
+	outputFile << "It is a Flower: its name is " << f->name << ". ";
 	switch(f->type)
 	{
 	case flower::GARDEN:
-		ofst << "It's a garden flower." << endl;
+		outputFile << "It's a garden flower." << endl;
 		break;
 	case flower::DOMESTIC:
-		ofst << "It's a domestic flower." << endl;
+		outputFile << "It's a domestic flower." << endl;
 		break;
 	case flower::WILD:
-		ofst << "It's a wild flower." << endl;
+		outputFile << "It's a wild flower." << endl;
 		break;
 	case flower::BED:
-		ofst << "It's from a flower-bed." << endl;
+		outputFile << "It's from a flower-bed." << endl;
 		break;
 	}
 	
 	switch(f->habitat)
 	{
 	case DESERT:
-		ofst << "Its natural habitat is desert." << endl;
+		outputFile << "Its natural habitat is desert." << endl;
 		break;
 	case TUNDRA:
-		ofst << "Its natural habitat is tundra." << endl;
+		outputFile << "Its natural habitat is tundra." << endl;
 		break;
 	case FOREST:
-		ofst << "Its natural habitat is forest." << endl;
+		outputFile << "Its natural habitat is forest." << endl;
 		break;
 	case JUNGLE:
-		ofst << "Its natural habitat is jungle." << endl;
+		outputFile << "Its natural habitat is jungle." << endl;
 		break;
 	case FIELD:
-		ofst << "Its natural habitat is field." << endl;
+		outputFile << "Its natural habitat is field." << endl;
 		break;
 	}
 	plant *p = (plant*)f;
-	ofst << "Its name has " << consonant(p) << " consonants.\n";
+	outputFile << "Its name has " << Consonant(p) << " consonants.\n";
 }
-void Out(plant* &p, ofstream &ofst)
+void Out(plant* &p, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
+	OutputFileCheck(outputFile);
 	tree* t;
 	bush* b;
 	flower* f;
@@ -427,52 +427,52 @@ void Out(plant* &p, ofstream &ofst)
 	{
 	case TREE:
 		t = (tree*)p;
-		Out(t,ofst);
+		Out(t, outputFile);
 		break;
 	case BUSH:
 		b = (bush*)p;
-		Out(b,ofst);
+		Out(b, outputFile);
 		break;
 	case FLOWER:
 		f = (flower*)p;
-		Out(f,ofst);
+		Out(f, outputFile);
 		break;
 	default:
-		ofst << "Incorrect plant!" << endl;
+		outputFile << "Incorrect plant!" << endl;
 	}
 }
-void OutFirstOnly(container* &c, ofstream &ofst)
+void OutFirstOnly(container* &c, ofstream &outputFile)
 {
-	OutputFileCheck(ofst);
+	OutputFileCheck(outputFile);
 	container* cur = c;
 	int counter = 0;
-	while(cur->pl != NULL)
+	while(cur->plant != NULL)
 	{
-		plant* p = cur->pl;
+		plant* p = cur->plant;
 		cur = cur->next;
 		if(p->k != 0)
 			continue;
-		ofst << ++counter << ": ";
-		Out(p, ofst);
+		outputFile << ++counter << ": ";
+		Out(p, outputFile);
 	}
 }
 void Sort(container* &c)
 {
 	container* start = c;
-	for(int i = 0; i < start->len; ++i)
+	for(int i = 0; i < start->length; ++i)
 	{
 		bool changed = false;
 		container* cur = start;
-		while(cur->next->pl != NULL)
+		while(cur->next->plant != NULL)
 		{
-			int i1 = cur->pl->habitat;
-			int i2 = cur->next->pl->habitat;
+			int i1 = cur->plant->habitat;
+			int i2 = cur->next->plant->habitat;
 			if(i1 > i2)
 			{
 				plant* buf;
-				buf = cur->pl;
-				cur->pl = cur->next->pl;
-				cur->next->pl = buf;
+				buf = cur->plant;
+				cur->plant = cur->next->plant;
+				cur->next->plant = buf;
 				changed = true;
 			}
 			cur=cur->next;
@@ -481,14 +481,14 @@ void Sort(container* &c)
 			break;
 	}
 }
-int consonant(plant* &p)
+int Consonant(plant* &p)
 {
 	int res = 0;
 	string cur = p->name;
 	string alphabet = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz";
 	for(int i = 0; i < alphabet.length(); ++i)
 	{
-		int c = count(cur.begin(),cur.end(), alphabet[i]);
+		int c = count(cur.begin(), cur.end(), alphabet[i]);
 		if (c > 0)
 			res += c;
 		if (res < 0)

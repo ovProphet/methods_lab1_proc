@@ -1,10 +1,14 @@
-﻿Построение начато 05.04.2017 19:55:56.
+﻿Построение начато 07.04.2017 16:16:35.
      1>Проект "C:\Users\Валерий\Documents\Visual Studio 2010\Methods\Methods1P\Methods1P\Methods1P.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Debug\Methods1P.unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\gtest\googletest-master\googletest\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt client.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\gtest\googletest-master\googletest\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt client.cpp functions.cpp tests.cpp
          client.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         tests.cpp
+         functions.cpp
        ManifestResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -25,4 +29,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.73
+Затраченное время: 00:00:05.58

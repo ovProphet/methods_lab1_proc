@@ -13,27 +13,27 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
-	ifstream ifst(argv[1]);
-	ofstream ofst(argv[2]);
+	ifstream inputFile(argv[1]);
+	ofstream outputFile(argv[2]);
 
-	ofst << "Start" << endl;
+	outputFile << "Start" << endl;
 	container* c;
     Init(c);
-	In(c, ifst);
-	ofst << "Filled container:" << endl;
-	Out(c,ofst);
+	In(c, inputFile);
+	outputFile << "Filled container:" << endl;
+	Out(c, outputFile);
 	
 	Sort(c);
-	ofst << "Sorted container:" << endl;
-	Out(c,ofst);
+	outputFile << "Sorted container:" << endl;
+	Out(c, outputFile);
 
-	ofst << "Elements of the first type only:" << endl;
-	OutFirstOnly(c,ofst);
+	outputFile << "Elements of the first type only:" << endl;
+	OutFirstOnly(c, outputFile);
 
 	Clear(c);
-	ofst << "Empty container:" << endl;
-	Out(c,ofst);
+	outputFile << "Empty container:" << endl;
+	Out(c, outputFile);
 
-	ofst<< "Stop" << endl;
+	outputFile<< "Stop" << endl;
 	return 0;
 }
