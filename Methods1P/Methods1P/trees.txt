@@ -1,5 +1,0 @@
-Gnav-ov-Stryka 2000000000000000 0
-Kyr-Lun-Borgor 55555 1
-Kyr-Lun-Borgor 55555 2
-Kyr-Lun-Borgor 55555 3
-Za-Bor 1337 4
