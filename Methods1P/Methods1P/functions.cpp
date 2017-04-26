@@ -41,6 +41,9 @@ void In(container* &c, ifstream &ifst)
 			if(cnt == 0)
 				cur = c;
 			c->pl = p;
+			/*Init(c->next);
+			c = c->next;
+			...*/
 			c->next = new container;
 			c->next->next = NULL;
 			c->next->pl = NULL;
@@ -388,6 +391,13 @@ void OutFirstOnly(container* &c, ofstream &ofst)
 		Out(p, ofst);
 	}
 }
+/*bool plant::compare(plant* pl1, plant* pl2)
+{
+int i1 = pl1->GetHabitat();
+int i2 = pl2->GetHabitat();
+return (i1 > i2 );
+}
+if you want to change a sorting condition, it won't be necessary to change sorting but just the special function*/
 void Sort(container* &c)
 {
 	container* start = c;
@@ -399,7 +409,7 @@ void Sort(container* &c)
 		{
 			int i1 = cur->pl->habitat;
 			int i2 = cur->next->pl->habitat;
-			if(i1 > i2)
+			if(i1 > i2)/*if (compare( cur->pl, cur->next->pl))*/
 			{
 				plant* buf;
 				buf = cur->pl;

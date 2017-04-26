@@ -6,6 +6,7 @@
 using namespace std;
 enum hab{FOREST,FIELD,DESERT,TUNDRA,JUNGLE};
 enum key{TREE,BUSH,FLOWER};
+/*(1)*/
 struct plant
 {
 	key k;
@@ -25,6 +26,8 @@ struct bush
 	string name;
 	hab habitat;
 	enum month {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
+	/*month m;
+	//It's better to replace that enum in string (1)*/
 	month blooming;
 };
 struct flower
@@ -33,8 +36,20 @@ struct flower
 	string name;
 	hab habitat;
 	enum habitat1{DOMESTIC, WILD, GARDEN, BED};
+	/*habitat1 h;
+	//It's better to replace that enum in string after (1)*/
 	habitat1 type;
 };
+/*struct node
+{
+	plant *pl;
+	node *next;
+}
+struct container
+{
+	node *cont;
+	int len;
+}*/
 struct container
 {
 	container *next;
